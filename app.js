@@ -4,7 +4,6 @@ const _URL = _HOSTNAME + '/bbs/Gossiping/index.html';
 
 var request = require("request");
 var cheerio = require("cheerio");
-// var debug = require('debug')('app')
 
 var records = [];
 
@@ -17,7 +16,7 @@ let options = {
 };
 j.setCookie(cookie, _URL);
 
-console.log('url=', _URL);
+console.log('url:', _URL);
 
 request(options, (err, r, html) => {
     if(err) throw err;

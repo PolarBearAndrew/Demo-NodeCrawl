@@ -24,7 +24,6 @@
   "homepage": "https://github.com/PolarBearAndrew/Demo-NodeCrawl#readme",
   "dependencies": {
     "cheerio": "^0.22.0",
-    "debug": "^2.6.3",
     "request": "^2.81.0"
   }
 }
