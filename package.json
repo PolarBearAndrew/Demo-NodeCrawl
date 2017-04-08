@@ -2,8 +2,10 @@
   "name": "demo-node-crawl",
   "version": "1.0.0",
   "description": "A little demo for node crawl",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "DEBUG=* node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/PolarBearAndrew/Demo-NodeCrawl/issues"
   },
-  "homepage": "https://github.com/PolarBearAndrew/Demo-NodeCrawl#readme"
+  "homepage": "https://github.com/PolarBearAndrew/Demo-NodeCrawl#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "debug": "^2.6.3",
+    "request": "^2.81.0"
+  }
 }
