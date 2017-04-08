@@ -1,6 +1,6 @@
 
 const _HOSTNAME = 'https://www.ptt.cc';
-const _URL = _HOSTNAME + '/bbs/Gossiping/index.html';
+const _URL = _HOSTNAME + '/bbs/Gossiping/index1.html';
 
 var request = require("request");
 var cheerio = require("cheerio");
@@ -16,18 +16,18 @@ let options = {
 };
 j.setCookie(cookie, _URL);
 
-console.log('url:', _URL);
+console.log('##############\nurl: %s\n', _URL);
 
 request(options, (err, r, html) => {
     if(err) throw err;
     $ = cheerio.load(html);
     $('.r-ent').each( function(i, ele) {
-        let r = {};
-        r.title = $(ele).children('.title').children('a').text();
-        r.author = $(ele).children('.meta').children('.author').text();
-        r.date = $(ele).children('.meta').children('.date').text();
-        r.link = _HOSTNAME + $(ele).attr('href');
-        records[i] = r;
+        records[i] = {
+            link: _HOSTNAME + $(ele).attr('href'),
+            title: $(ele).children('.title').children('a').text(),
+            date: $(ele).children('.meta').children('.date').text(),
+            author: $(ele).children('.meta').children('.author').text(),
+        };
     });
     console.log('records', records);
 });
